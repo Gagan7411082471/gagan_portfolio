@@ -1,0 +1,74 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header class="header">
+  <a href="#" class="logo">Portfolio</a>
+  <i class='bx bx-menu' id="menu-icon"></i>
+  <nav class="navbar">
+      <a href="home.html" class="active">Home</a>
+      <a href="about.html">ABOUT</a>
+      <a href="skills.html">SKILLS</a>
+      <a href="portfolio.html">PORTFOLIO</a>
+      <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
+
+<section class="services"id="skills">
+  <h2 class="heading">My<span>Skills</span></h2>
+
+  <div class="services-container">
+      <div class="services-box">
+          <i class='bx bx-code-alt'></i>
+          <h3>HTML</h3>
+      </div>
+      <div class="services-box">
+          <i class='bx bxl-css3'></i>
+          <h3>CSS</h3>
+      </div>
+      <div class="services-box">
+          <i class='bx bxl-javascript' ></i>
+          <h3>JavaScript</h3>
+      </div>
+      <div class="services-box">
+          <i class='bx bxl-code-alt'></i>
+          <h3>C</h3>
+      </div>
+  
+      <div class="services-box">
+          <i class='bx bxl-code-alt' ></i>
+          <h3>C ++</h3>
+      </div>
+      <div class="services-box">
+          <i class='bx bxl-code-alt' ></i>
+          <h3>Python</h3>
+      </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="script.js"></script>
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzFPVGxI-75Ilkm2z_EMuI9ubPlp8-7dQmMzzdPiIunLPPzj3bcY1ohMdT_DfZ3zPwhTA/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg=document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML="Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML=""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
